@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npx tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
@@ -14,6 +14,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@ilovepdf/ilovepdf-nodejs": "^0.3.1",
     "docx": "^9.5.0",
     "file-saver": "^2.0.5",
     "mammoth": "^1.9.1",
@@ -37,7 +38,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.8",
+    "tailwindcss": "^4.1.8",
     "vite": "^6.1.0"
   }
 }

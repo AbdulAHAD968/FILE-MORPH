@@ -1,10 +1,10 @@
 import React from "react";
-import OCR from "./OCR.jsx";
+import FileMorph from './FileMorph.jsx';
 
 function App() {
   return (
     <div>
-      <OCR />
+      <FileMorph />
     </div>
   );
 }
