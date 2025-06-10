@@ -1,8 +1,8 @@
 /* OCR Main Container */
 .ocr-outer-container {
   max-width: 1400px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
 }
 
 .ocr-container {
