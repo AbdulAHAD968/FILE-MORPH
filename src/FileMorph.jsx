@@ -21,9 +21,13 @@ const FileMorph = () => {
 
   return (
     <div className="file-morph-app">
+
       <header className="app-header">
+        
         <div className="header-content">
+        
           <h1 className="app-title">File Morph</h1>
+        
           <nav className="app-nav">
             <button
               className={`nav-button ${activeTab === "ocr" ? "active" : ""}`}
@@ -38,7 +42,9 @@ const FileMorph = () => {
               <FontAwesomeIcon icon={faExchangeAlt} /> Convert
             </button>
           </nav>
+        
         </div>
+      
       </header>
 
       {notification && (
@@ -50,10 +56,12 @@ const FileMorph = () => {
       <main className="app-main">
         {activeTab === "ocr" ? (
           <OCR showNotification={showNotification} />
-        ) : (
+        ) 
+        :(
           <FileConverter showNotification={showNotification} />
         )}
       </main>
+      
     </div>
   );
 };

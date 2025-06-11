@@ -15,7 +15,9 @@ import {
   faExclamationTriangle
 } from "@fortawesome/free-solid-svg-icons";
 
+
 const FileConverter = ({ showNotification }) => {
+  
   const [fileToConvert, setFileToConvert] = useState(null);
   const [targetFormat, setTargetFormat] = useState("docx");
   const [conversionStatus, setConversionStatus] = useState("idle");
@@ -93,14 +95,17 @@ const FileConverter = ({ showNotification }) => {
       if (!possibleConversions.includes(targetFormat) && possibleConversions.length > 0) {
         setTargetFormat(possibleConversions[0]);
       }
-    } else {
+    } 
+    else {
       setSupportedConversions([]);
     }
   }, [fileToConvert]);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
-    if (!file) return;
+    if (!file){
+      return;
+    }
 
     setFileToConvert(file);
     showNotification(`File ${file.name} ready for conversion`, "success");
@@ -152,7 +157,10 @@ const FileConverter = ({ showNotification }) => {
         },
       });
 
-      if (!startRes.ok) throw new Error("Failed to start task");
+      if (!startRes.ok){
+        throw new Error("Failed to start task");
+      }
+
       const { task, server } = await startRes.json();
 
       // 2. Upload File
@@ -168,7 +176,9 @@ const FileConverter = ({ showNotification }) => {
         body: formData,
       });
 
-      if (!uploadRes.ok) throw new Error("File upload failed");
+      if (!uploadRes.ok){
+        throw new Error("File upload failed");
+      }
 
       const uploadData = await uploadRes.json();
       const serverFilename = uploadData.server_filename;
@@ -193,7 +203,9 @@ const FileConverter = ({ showNotification }) => {
         }),
       });
 
-      if (!processRes.ok) throw new Error("Process failed");
+      if (!processRes.ok){
+        throw new Error("Process failed");
+      }
 
       // 4. Download
       const downloadRes = await fetch(`https://${server}/v1/download/${task}`, {
@@ -203,22 +215,27 @@ const FileConverter = ({ showNotification }) => {
         },
       });
 
-      if (!downloadRes.ok) throw new Error("Download failed");
+      if (!downloadRes.ok){
+        throw new Error("Download failed");
+      }
 
       const blob = await downloadRes.blob();
       saveAs(blob, `converted.${targetFormat}`);
 
       showNotification("Conversion successful!", "success");
-    } catch (err) {
+    }
+    catch (err) {
       console.error(err);
       showNotification("Conversion failed: " + err.message, "error");
-    } finally {
+    } 
+    finally {
       setConversionStatus("idle");
     }
   };
 
   return (
     <div className="converter-container">
+
       <div className="converter-main">
         <div className="converter-card upload-section" onClick={triggerConversionInput}>
           <input
@@ -228,10 +245,13 @@ const FileConverter = ({ showNotification }) => {
             onChange={handleFileUpload}
             className="hidden-input"
           />
+
           <div className="upload-icon">
             <FontAwesomeIcon icon={faUpload} size="3x" />
           </div>
+          
           <h3>Select File to Convert</h3>
+          
           <p>Click to browse or drag and drop</p>
           {fileToConvert && (
             <div className="file-preview">
@@ -296,11 +316,14 @@ const FileConverter = ({ showNotification }) => {
       </div>
 
       <div className="info-sections">
+        
         <div className="info-card warning-card">
+        
           <div className="card-header">
             <FontAwesomeIcon icon={faExclamationTriangle} className="warning-icon" />
             <h3>Data Privacy Notice</h3>
           </div>
+        
           <div className="card-content">
             <p>
               <strong>Important:</strong> Files are processed on external servers. For sensitive documents:
@@ -312,13 +335,16 @@ const FileConverter = ({ showNotification }) => {
               <li>Consider offline tools for confidential documents</li>
             </ul>
           </div>
+        
         </div>
 
         <div className="info-card limitations-card">
+        
           <div className="card-header">
             <FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
             <h3>Supported Conversions</h3>
           </div>
+        
           <div className="card-content">
             <p>We support these conversion paths:</p>
             <ul>
@@ -327,12 +353,17 @@ const FileConverter = ({ showNotification }) => {
               <li><strong>PDF to PDF/A:</strong> Archival standard PDF</li>
               <li><strong>Between Office formats:</strong> Limited conversion</li>
             </ul>
+
             <div className="thanks-note">
               Using iLovePDF API - 50MB max file size, watermark on free tier.
             </div>
+          
           </div>
+        
         </div>
+      
       </div>
+    
     </div>
   );
 };

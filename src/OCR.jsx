@@ -16,6 +16,7 @@ import ocrLimitImg from '/src/assets/ocr-limit.png';
 import ocrSecImg from '/src/assets/ocr-sec.png';
 
 const OCR = ({ showNotification }) => {
+
   const [image, setImage] = useState(null);
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
@@ -62,15 +63,16 @@ const OCR = ({ showNotification }) => {
 
     if (file.type === "application/pdf") {
       showNotification("Please use the converter tab for PDFs", "error");
-    } else if (file.type.startsWith("image/")) {
+    } 
+    else if (file.type.startsWith("image/")) {
       setImage(URL.createObjectURL(file));
       setText("");
       showNotification("Image uploaded successfully!", "success");
-    } else {
+    } 
+    else {
       showNotification("Unsupported file type", "error");
     }
 
-    // Reset the file input value
     e.target.value = null;
   };
 
@@ -87,7 +89,8 @@ const OCR = ({ showNotification }) => {
         showNotification("URL must start with http:// or https://", "error");
         return;
       }
-    } catch (e) {
+    } 
+    catch (e) {
       showNotification("Invalid URL format", "error");
       return;
     }
@@ -156,7 +159,10 @@ const OCR = ({ showNotification }) => {
     <div className="ocr-outer-container">
 
       <div className="ocr-container">
+
+        {/* FILE UPLOAD SECTION */}
         <div className="upload-section">
+          
           <div className="upload-options">
             <label className="upload-card">
               <input
@@ -209,9 +215,12 @@ const OCR = ({ showNotification }) => {
               </button>
             </div>
           )}
-        </div>
 
+        </div>
+        
+        {/* TEXT EXTRACTION SECTION */}
         <div className="extraction-section">
+          
           <div className="controls">
             <div className="language-selector">
               <label>Language:</label>
@@ -274,10 +283,13 @@ const OCR = ({ showNotification }) => {
               />
             </div>
           )}
+
         </div>
+
       </div>
 
       <div className="ocr-info-sections">
+        
         <div className="info-card security-info">
           <div className="info-icon">
             <FontAwesomeIcon icon={faShieldAlt} size="2x" />
@@ -314,9 +326,11 @@ const OCR = ({ showNotification }) => {
             <img src={ocrLimitImg} alt="OCR limitations illustration" />
           </div>
         </div>
+
       </div>
 
     </div>
+    
   );
 
 };
