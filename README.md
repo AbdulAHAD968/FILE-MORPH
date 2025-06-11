@@ -2,16 +2,16 @@
 
 ![OCR-MAIN Screenshot](./readme-assets/ocr-image.PNG)
 
-**🔗 Live Demo:** [https://file-morph-six.vercel.app/](https://file-morph-six.vercel.app/)  
-**📁 Repository:** [https://github.com/AbdulAHAD968/FILE-MORPH](https://github.com/AbdulAHAD968/FILE-MORPH)
+**Live Demo:** [https://file-morph-six.vercel.app/](https://file-morph-six.vercel.app/)  
+**Repository:** [https://github.com/AbdulAHAD968/FILE-MORPH](https://github.com/AbdulAHAD968/FILE-MORPH)
 
 FileMorph is a versatile web application that combines OCR (Optical Character Recognition) and file conversion capabilities in one convenient interface. Extract text from images or convert files between popular formats with ease.
 
 ---
 
-## 🚀 Features
+## Features
 
-### 📷 OCR Functionality
+### OCR Functionality
 
 - Extract text from uploaded images  
 - Support for cloud images via URL  
@@ -24,7 +24,7 @@ FileMorph is a versatile web application that combines OCR (Optical Character Re
 ![OCR-INSTRUCTIONS Screenshot](./readme-assets/instructions-ocr.PNG)
 ---
 
-### 🔄 File Conversion
+### File Conversion
 
 - Convert between popular document formats  
 - Supported formats:
@@ -38,7 +38,7 @@ FileMorph is a versatile web application that combines OCR (Optical Character Re
 ![MAIN-FILE-CONVERT Screenshot](./readme-assets/file-convert.PNG)
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **Frontend:** React.js  
 - **OCR:** Tesseract.js  
@@ -50,7 +50,7 @@ FileMorph is a versatile web application that combines OCR (Optical Character Re
 ![CONVERT-INSTRUCTIONS Screenshot](./readme-assets/conversion-instructions.PNG)
 ---
 
-## 🧪 Installation
+## Installation
 
 To run FileMorph locally:
 
@@ -69,16 +69,16 @@ http://localhost:3000
 
 ---
 
-## 📖 Usage
+## Usage
 
-### 🔍 OCR Tab
+### OCR Tab
 
 - [x] Upload an image file or paste from clipboard
 - [x] Select the language of the text
 - [x] Click Extract Text
 - [x] Copy or download the extracted text
 
-### 🔄 Convert Tab
+### Convert Tab
 
 - [x] Upload the file you want to convert
 - [x] Select the target format
@@ -87,7 +87,7 @@ http://localhost:3000
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ``` bash 
 filemorph/
@@ -110,7 +110,7 @@ filemorph/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 1. Contributions are welcome! Follow these steps:
 2. Fork the project
 3. Create your feature branch:
@@ -129,7 +129,7 @@ git push origin feature/AmazingFeature
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 1. Add more file conversion formats
 1. Implement batch processing
@@ -139,7 +139,7 @@ git push origin feature/AmazingFeature
 
 ---
 
-## 📄 License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
