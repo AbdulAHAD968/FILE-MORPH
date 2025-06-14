@@ -148,4 +148,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - Tesseract.js – OCR engine
 - Font Awesome – Icons
 - React – Frontend framework
-- iLovePDF – For file conversion inspiration and API_KEY as well..
+- iLovePDF – For file conversion inspiration and API_KEY as well.
